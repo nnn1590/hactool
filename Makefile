@@ -79,3 +79,9 @@ dist: clean_full
 	cp -R *.c *.h config.mk.template Makefile README.md LICENSE mbedtls hactool-$(HACTOOLVER)
 	tar czf hactool-$(HACTOOLVER).tar.gz hactool-$(HACTOOLVER)
 	rm -r hactool-$(HACTOOLVER)
+
+.PHONY: install uninstall
+install:
+	install -s hactool$(EXEEXT) /usr/bin
+uninstall:
+	$(RM) /usr/bin/hactool$(EXEEXT)
